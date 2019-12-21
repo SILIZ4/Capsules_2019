@@ -1,0 +1,28 @@
+\ProvidesPackage{tex_settings}
+
+
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+
+\hypersetup{
+colorlinks=true,
+linkcolor=blue
+}
+
+\definecolor{red-bg}{RGB}{252,227,235}
+\definecolor{red-code}{RGB}{189,39,39}
+\definecolor{action-bg}{RGB}{250, 243, 227}
+
+\newcommand{\action}[1]{{\small \colorbox{action-bg}{\texttt{#1}} }}
+\newcommand{\code}[1]{{\small \colorbox{red-bg}{\textcolor{red-code}{\texttt{#1}}} }}
+\newcommand{\latex}{\LaTeX{} }
+\newcommand{\bs}{\textbackslash}
+
+\parskip=7pt
+
+\pagestyle{fancy}
+\lhead{Simon Lizotte --- \today}

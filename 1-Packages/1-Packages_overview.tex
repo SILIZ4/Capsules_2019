@@ -1,0 +1,55 @@
+\documentclass{article}
+
+\usepackage{../tex_settings}
+
+
+\begin{document}
+
+\begin{center}
+{\Huge Guide 1 - Préparer son ordinateur pour programmer}
+\end{center}
+
+\section{Terminal}
+
+Le terminal est une interface permettant d'effectuer des opérations de base sur le système. Pour exécuter une commande, celle-ci doit être disponible  dans au moins un des chemins accessibles. Dans Windows, il faut la plupart du temps ajouter manuellement les chemins nécessaires. Dans Linux et MacOS, ces chemins devraient être déjà gérés. Pour ouvrir un terminal, il suffit de chercher «cmd», «invite de commande» ou «terminal» dans la barre de recherche.
+
+
+\subsection{Variables d'environnement}
+
+La principale utilité dans notre cas est de pouvoir installer des librairies et de lancer Python de n'importe où. Pour ajouter une variable d'environnement dans Windows, il faut suivre les étapes suivantes:
+\begin{enumerate}
+\item Chercher dans l'explorateur \action{variables d'environnement} et choisir \newline\action{Modifier les variables d'environnement du système}
+\item Cliquer sur \action{Variables d'environnement}
+\item Sélectionner la variable \action{Path} soit pour l'utilisateur uniquement ou pour le système complet
+\item Cliquer sur \action{Nouveau}, puis entrer le chemin désiré.
+\end{enumerate}
+
+Si vous ne savez pas où se trouvent les exécutables python et pip, il faut malheureusement les chercher à la main. Ils se trouvent souvent dans
+\begin{enumerate}[label=- ]
+\item \action{C:\bs Users\bs <username>\bs Anaconda3}. 
+\item \action{C:\bs Program Files} dans \action{Anaconda3} ou \action{Python}
+\item \action{C:\bs Program Files(x86)} dans \action{Anaconda3} ou \action{Python}.
+\end{enumerate}
+Sinon, il y a l'option d'effectuer une recherche dans l'explorateur de fichiers. Une fois identifiés, ces chemins sont à ajouter dans la variable d'envrironnement «Path».
+
+Après avoir ajouté les variables d'environnement appropriées, il devrait être possible d'exécuter les commandes \code{python} et \code{pip} sans erreur.
+
+\subsection{Bases du terminal}
+Bien que le terminal est intimidant au premier regard, il n'est pas compliqué à utiliser. Ce qui est important de savoir, c'est qu'on doit se trouver au bon endroit dans les fichier pour exécuter un programme. 
+
+Pour se déplacer, il suffit d'écrire \code{cd <path>} pour \textit{change directory}. Si on écrit \code{cd ..}, on se dirige vers le dossier parent. Pour voir le contenu du dossier actuel, écrire \code{dir}. Finalement, il est pratique de savoir que la commande Ctrl+c dans le terminal va arrêter n'importe quel programme.
+
+\subsection{Utiliser le terminal avec Python}
+La principale utilité du terminal avec Python est d'installer des librairies avec \code{pip install <package>}. Il est aussi possible d'exécuter un fichier Python dans le terminal par \code{python myfile.py}. Si jamais les droits d'administrateurs sont manquant pour exécuter une commande dans Windows, il suffit de faire un clic droit sur le programme pour le terminal et cliquer «exécuter en tant qu'administrateur». Dans les systèmes MacOS ou Linux, ajouter \code{sudo} devant la commande.
+
+\section{Environnements virtuels dans Python}
+Un environnement virtuel est un dossier contenant un exécutable Python isolé des autres. Ses librairies sont aussi indépendantes de celles des autres «systèmes» Python. 
+
+Il est important de savoir que ces environnement existent étant donné que certains  environnements de développement (\textit{IDE}), comme PyCharm, les utilisent.  Les détails des environnements virtuels ne sont pas couverts ici, mais sachez qu'il est possible d'en créer un avec \code{python -m venv chemin/vers/environnement} et qu'il est possible des les gérer simplement avec Anaconda. Pour plus d'information, allez consulter la \href{https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html}{documentation}.
+
+\section{Jupyter}
+Un jupyter notebook est un \textit{wrapper} qui offre une session interactive de Python. Pour installer \textit{Jupyter}, exécuter \code{pip install jupyter}. Pour ouvrir un \textit{Jupyter notebook}, écrire \code{jupyter-notebook} à l'emplacement désiré dans le terminal. Il est important de noter que ces \textit{notebooks} portent l'extension .ipy et ne peuvent pas être lus directement hors de \textit{Jupyter}. Dans le cas inverse, \textit{Jupyter} peut lire les fichiers d'extension .py, mais la session ne sera pas interactive.
+
+L'intérêt des \textit{Jupyter notebooks} est qu'une fois que le code est exécuté, les variables restent conservées en mémoire. Il est alors possible de suivre l'évolution des variables et du code plus aisément. Il est également possible d'ajouter des cellules contenant du texte formaté en \latex ou en markdown. 
+
+\end{document}

@@ -1,0 +1,37 @@
+\documentclass{article}
+
+\usepackage{../tex_settings}
+
+\definecolor{blue-bg}{RGB}{228, 228, 253}
+\definecolor{blue-code}{RGB}{40, 80, 189}
+
+\newcommand{\blueb}[1]{{\small \colorbox{blue-bg}{\textcolor{blue-code}{\texttt{#1}}} }}
+
+\begin{document}
+
+\begin{center}
+\Huge Guide 2 - Comment produire des graphiques de qualité
+\end{center}
+
+\section{Matplotlib}
+La librairie matplotlib en Python est un excellent choix pour produire de graphiques ayant l'air professionnels. En plus d'être facile d'utilisation, matplolib offre un très haut niveau de personnalisation. Si vous avez suivi le premier guide, vous devriez vous doutez qu'il faut exécuter la commande \code{pip install matplotlib} dans le terminal pour installer la librairie. Il est possible que vous deviez installer PyQt5 pour que l'affichage des figures fonctionne.
+
+\section{Comment l'utiliser}
+Le module de cette librairie qui nous intéresse est \code{matplotlib.pyplot}. Pour relier des points ensembles, on utilise la fonction \code{pyplot.plot} en passant en argument un itérable des valeurs en $x$ et un autre des valeurs en $y$. La fonction \code{pyplot.scatter} fonctionne de la même manière excepté qu'il ne relit pas les points entres eux. 
+
+On peut également produire des histogrammes de distributions ou encore des diagrammes à barres avec \code{pyplot.hist} et \code{pyplot.bar}. Pour faire un histogramme, il suffit de donner un itérable contenant les données et de spécifier le nombre de compartiments (\textit{bins}) désiré. Pour le diagramme 
+à barres, on a besoin que de fournir la position en $x$ de chacune des barres et le nombre de données dans chaque compartiment dans un itérable.
+
+Il est possible de produire des diagrammes en violon, des diagrammes en boites, des surfaces en 3D, des graphiques en coordonnées polaires et plus encore. Comme ces types de figures sont moins communes, ce document n'en parlera pas. Cepdant, la documentation de matplotlib ainsi que les multiples questions sur \textit{stackoverflow} devraient pouvoir dépanner.
+
+Une manière intéressante de présenter des données est d'afficher plusieurs graphiques différents sur la même figure. Pour se faire, il faut utiliser la fonction \code{pyplot.subfigs}. On lui donne en argument le nombre colonnes et de rangées de figures qu'on veut avoir, puis elle nous retourne deux objets: le premier est la figure globale et le deuxième est une matrice des sous-figures. On peut alors appliquer les fonctions présentées plus haut sur chacun des objets sous-figure. À noter que la syntaxe pour les sous-figures et pour les figures sont légèrement différentes.
+
+\section{Personnalisation}
+
+Les graphiques produits dans la dernière section ne sont pas très intéressants et claires. En effet, ils n'ont pas de titres sur les axes, de légende, de grille et de belles couleurs. Heureusement, la librairie matplotlib permet de tout arranger cela. Dans cette section les méthodes pour les figures créées à partir de \code{pyplot.plot} seront notéesi \action{method} et celles pour les sous-figures seront notées \blueb{method}.
+
+Pour modifier les propriétés des axes, on utilise \code{pyplot.<property>()} ou \blueb{subfig.set(<property>)}. Par exemple, si on veut changer le titre des axes et la taille de leur police, \code{pyplot.xlabel(<title>, size=<fontsize>)} et \newline \blueb{subfig.set()}.
+
+
+
+\end{document}
